@@ -1,1 +1,13 @@
+name: 'Laravel Directadmin CI/CD'
+author: 'Moein Noghani'
+description: 'Deploying Laravel projects on DirectAdmin hosts using FTP and DirectAdmin APIs'
+inputs:
+  who-to-greet:  # id of input
+    description: 'Who to greet'
+    required: true
+    default: 'World'
+
+runs:
+  using: "composite"
+
 
