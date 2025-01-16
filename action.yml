@@ -2,10 +2,37 @@ name: 'Laravel Directadmin CI/CD'
 author: 'Moein Noghani'
 description: 'Deploying Laravel projects on DirectAdmin hosts using FTP and DirectAdmin APIs'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  ftp-server:
     required: true
-    default: 'World'
+    description: "ftp server address"
+  ftp-port:
+    required: true
+    default: 21
+    description: "Ftp Server port to connect to (read your web hosts docs)"
+  ftp-username:
+    required: true
+  ftp-password:
+    required: true
+  directadmin-server:
+   required: true
+  directadmin-username:
+   required: true
+  directadmin-password:
+   required: true
+  source-dir:
+    required: true
+    description: "source path on the git repository to upload"
+  destination-dir:
+    required: true
+    description: "Path to upload to on the server."
+  dry-run:
+    required: false
+    default: false
+    description: "Prints which modifications will be made with current config options, but doesnt actually make any changes"
+  exclude:
+    required: false
+    default: false
+    description: "These files will not be included in the publish/delete process"
 
 runs:
   using: "composite"
